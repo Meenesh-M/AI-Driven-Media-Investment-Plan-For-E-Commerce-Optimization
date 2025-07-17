@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ad Budget Allocation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#features">Features</a>
+    <a href="#technologies">Technologies</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="container">
+    <h1>Ad Budget Allocation</h1>
+
+    <div class="input-container">
+      <label for="budgetInput">Total Budget (USD):</label>
+      <input type="number" id="budgetInput" value="10000">
+    </div>
+
+    <button class="glow-button" onclick="fetchBudgetAllocation()">Allocate Budget</button>
+
+    <h2>Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Allocated Budget (USD)</th>
+        </tr>
+      </thead>
+      <tbody id="budgetTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Other Sections -->
+  <div class="section" id="how-it-works">
+    <h2>🧠 How It Works</h2>
+    <p>Predicts ad performance using XGBoost ML model trained on historic datasets.</p>
+  </div>
+
+  <div class="section" id="features">
+    <h2>✨ Key Features</h2>
+    <ul>
+      <li>🚀 XGBoost-Based Budget Allocation</li>
+      <li>📊 Data-Driven Multi-platform Optimization</li>
+      <li>💡 Future Revenue Prediction</li>
+    </ul>
+  </div>
+
+  <div class="section" id="technologies">
+    <h2>🛠️ Technologies Used</h2>
+    <p>FastAPI, XGBoost, Pandas, HTML, CSS, JavaScript</p>
+  </div>
+
+  <div class="section" id="about">
+    <h2>👨‍💻 About This Project</h2>
+    This project is a web-based application developed to intelligently allocate marketing budgets across 
+    multiple ad platforms like Google, Meta, and Microsoft Ads. It uses historical ad performance data 
+    to calculate Return on Ad Spend (ROAS) and distribute the total budget accordingly.<br><br>
+
+    The goal is to help marketers make data-driven decisions by identifying which platform delivers the 
+    best value for every dollar spent.<br><br>
+
+    The frontend is built using HTML, CSS, and JavaScript, while the backend is powered by FastAPI and Python.<br><br>
+  </div>
+
+  <script>
+    function fetchBudgetAllocation() {
+      let totalBudget = document.getElementById("budgetInput").value;
+
+      fetch(`http://127.0.0.1:8000/budget_allocation/?total_budget=${totalBudget}`)
+        .then(response => response.json())
+        .then(data => {
+          let tableBody = document.getElementById("budgetTable");
+          tableBody.innerHTML = "";
+
+          data.forEach(item => {
+            let row = `<tr>
+              <td>${item.source}</td>
+              <td>$${item.new_budget.toFixed(2)}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+          });
+        })
+        .catch(error => console.error('Error fetching budget allocation:', error));
+    }
+  </script>
+
+</body>
+</html>

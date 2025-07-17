@@ -1,0 +1,151 @@
+/* Reset & Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1b1b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+/* Main Container */
+.container {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Input Section */
+.input-container {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Stylish Button */
+button, .glow-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(255, 65, 108, 0.7);
+}
+
+button:hover, .glow-button:hover {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+/* Scrollable Sections */
+.section {
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    color: white;
+}
+
+.section h2 {
+    color: #ffd166;
+    margin-bottom: 10px;
+}
+
+.section p, .section li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.section img {
+    margin-top: 15px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Login Page */
+.login-body {
+    background: linear-gradient(135deg, #232526, #414345);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    width: 300px;
+    color: white;
+}
+
+.login-container input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+}
