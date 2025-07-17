@@ -1,11 +1,11 @@
 
-# 📊 Budget Allocation Model Using Ad Performance Data
+# Budget Allocation Model Using Ad Performance Data
 
 This project is a simplified version of a budget allocation model that. It calculates how to distribute a fixed marketing budget across platforms like **Google, Meta, and Microsoft** based on historical performance data.
 
 ---
 
-## 📂 Dataset Format
+## Dataset Format
 
 The dataset must contain the following fields:
 
@@ -20,7 +20,7 @@ Date, Impressions, Reach, Cost, Clicks, Conversions, Revenue
 
 ---
 
-## 🧮 Calculated Metrics
+## Calculated Metrics
 
 - **CTR (Click-Through Rate)** = Clicks / Impressions
 - **CPC (Cost Per Click)** = Cost / Clicks
@@ -29,7 +29,7 @@ Date, Impressions, Reach, Cost, Clicks, Conversions, Revenue
 
 ---
 
-## 📈 Budget Allocation Logic
+## Budget Allocation Logic
 
 The model recommends how to split a total budget based on:
 - Historical **ROI** per platform
@@ -39,7 +39,7 @@ For example, if Google ads had the highest ROI last week, it receives a larger p
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 - Python
 - pandas, numpy
@@ -47,7 +47,7 @@ For example, if Google ads had the highest ROI last week, it receives a larger p
 
 ---
 
-## 📌 Usage
+## Usage
 
 1. Place your dataset in CSV format in the `data/` folder.
 2. Run the Python script in `scripts/` to see the recommended allocation.
